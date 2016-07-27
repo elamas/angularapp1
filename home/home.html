@@ -1,0 +1,9 @@
+<div>
+	<h1>Home</h1>
+	<div ng-repeat="category in model.categories" class="category">
+		<div>
+			<a href="#!/category/{{category.id}}"><img ng-src="img/categories/{{category.image}}" width="100" height="100"/></a>
+		</div>		
+		<div>{{category.name}}</div>
+	</div>
+</div>

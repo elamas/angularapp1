@@ -1,0 +1,12 @@
+.category {
+    margin: 10px 10px 10px 10px;
+	width: 100px;
+	display: inline-block;
+}
+
+.item {
+	width: 100px;
+    margin: 10px 10px 10px 10px;
+	border: 1px solid #000000;
+	display: inline-block;
+}

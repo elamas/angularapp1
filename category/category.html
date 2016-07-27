@@ -1,0 +1,19 @@
+<div>
+	<form>
+	<h1>Items of Category {{currCategory.name}}</h1>
+	<div ng-repeat="item in currCategory.items" class="item">
+		<!-- no me gusta mucho como he resuelto el tema de mostar rellena esta parte cuando se navega por la app. -->
+		<!-- en el scope que puesto las variables auxiliares ckeckboxValues y selectValues -->
+		<input type="checkbox" ng-click="updateOrder(item.id)" id="checkbox-{{item.id}}" ng-model="ckeckboxValues[item.id]"/>
+		<select ng-change="updateOrder(item.id)" id="select-{{item.id}}" ng-model="dummySelect"><!-- el ng-change me obliga a poner un ng-model. No uso ng-click para que no se ejecute solo con clickar en el desplegable -->
+			<option value="1" ng-selected="selectValues[item.id][1]">1</option>
+			<option value="2" ng-selected="selectValues[item.id][2]">2</option>
+			<option value="3" ng-selected="selectValues[item.id][3]">3</option>
+		</select>
+		{{item.price}}$
+		<img ng-src="img/items/{{item.image}}" width="100" height="100"/> {{item.name}}		
+	</div>
+	<div>
+		<button ng-disabled="model.order.getNumberOfItems() < 1" ng-click="go('/summary')">Checkout</button>
+	</div>
+</div>
